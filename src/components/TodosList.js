@@ -9,11 +9,17 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos } = this.props;
+    const { todos, handleChange } = this.props;
     return (
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} title={todo.title} />
+          <TodoItem
+            id={todo.id}
+            key={todo.id}
+            completed={todo.completed}
+            title={todo.title}
+            handleChange={handleChange}
+          />
         ))}
       </ul>
     );

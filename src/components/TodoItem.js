@@ -8,15 +8,17 @@ class TodoItem extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { id, title, completed, handleChange } = this.props;
     return (
-      <li>{title}</li>
+      <li><input type="checkbox" checked={completed} onChange={() => handleChange(id)} /> {title}</li>
     );
   }
 }
 
 TodoItem.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
 };
 
 export default TodoItem;
