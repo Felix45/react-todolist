@@ -9,7 +9,7 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos, handleChange } = this.props;
+    const { todos, handleChange, deleteItem } = this.props;
     return (
       <ul>
         {todos.map((todo) => (
@@ -19,6 +19,7 @@ class TodoList extends React.Component {
             completed={todo.completed}
             title={todo.title}
             handleChange={handleChange}
+            deleteItem={deleteItem}
           />
         ))}
       </ul>

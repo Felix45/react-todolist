@@ -8,9 +8,12 @@ class TodoItem extends React.Component {
   }
 
   render() {
-    const { id, title, completed, handleChange } = this.props;
+    const { id, title, completed, handleChange, deleteItem} = this.props;
     return (
-      <li><input type="checkbox" checked={completed} onChange={() => handleChange(id)} /> {title}</li>
+      <li>
+        <input type="checkbox" checked={completed} onChange={() => handleChange(id)} /> {title} 
+        <button onClick={() => deleteItem(id)}>Delete</button>
+      </li>
     );
   }
 }
