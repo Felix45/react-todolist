@@ -9,7 +9,9 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos, handleChange, deleteItem } = this.props;
+    const {
+      todos, handleChange, deleteItem, handleEdit,
+    } = this.props;
     return (
       <ul>
         {todos.map((todo) => (
@@ -20,6 +22,7 @@ class TodoList extends React.Component {
             title={todo.title}
             handleChange={handleChange}
             deleteItem={deleteItem}
+            handleEdit={handleEdit}
           />
         ))}
       </ul>
@@ -31,6 +34,7 @@ TodoList.propTypes = {
   handleChange: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   todos: PropTypes.instanceOf(Array).isRequired,
+  handleEdit: PropTypes.func.isRequired,
 };
 
 export default TodoList;
