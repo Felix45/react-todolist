@@ -71,7 +71,7 @@ class TodoItem extends React.Component {
 }
 
 TodoItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
   deleteItem: PropTypes.func.isRequired,
