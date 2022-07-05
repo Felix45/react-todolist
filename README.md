@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://felix45.github.io/todo-list/)
+[Live Demo Link](https://felix45.github.io/react-todolist/)
 
 ## Getting Started
 
