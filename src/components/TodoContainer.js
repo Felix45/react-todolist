@@ -1,8 +1,8 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import TodoList from './TodosList';
 import Header from './Header';
 import InputTodo from './InputTodo';
-import { v4 as uuidv4 } from 'uuid';
 
 class TodoContainer extends React.Component {
   constructor(props) {
@@ -29,42 +29,43 @@ class TodoContainer extends React.Component {
   }
 
   handleChange = (todoId) => {
-   
-    this.setState(state => ({
-        todos: state.todos.map((todo) => {
-            if(todo.id === todoId) {
-              return {...todo, completed: !todo.completed}
-            }
-            return todo;
-        })
+    this.setState((state) => ({
+      todos: state.todos.map((todo) => {
+        if (todo.id === todoId) {
+          return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+      }),
     }));
   }
 
   deleteItem = (todoId) => {
-    this.setState(state => ({
-      todos: state.todos.filter((todo) => todo.id !== todoId)
-    }))
+    this.setState((state) => ({
+      todos: state.todos.filter((todo) => todo.id !== todoId),
+    }));
   }
 
   addItem = (title) => {
     this.setState((state) => ({
-      todos: [...state.todos, {id: uuidv4(), title, completed: false}]
-    }))
+      todos: [...state.todos, { id: uuidv4(), title, completed: false }],
+    }));
   }
 
   render() {
     const { todos } = this.state;
     return (
-      <div>
-        <Header />
-        <InputTodo addItem={this.addItem} />
-        <ul>
-          <TodoList
-            todos={todos}
-            handleChange={this.handleChange}
-            deleteItem={this.deleteItem}
-          />
-        </ul>
+      <div className="container">
+        <div className="inner">
+          <Header />
+          <InputTodo addItem={this.addItem} />
+          <ul>
+            <TodoList
+              todos={todos}
+              handleChange={this.handleChange}
+              deleteItem={this.deleteItem}
+            />
+          </ul>
+        </div>
       </div>
     );
   }

@@ -28,6 +28,8 @@ class TodoList extends React.Component {
 }
 
 TodoList.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
   todos: PropTypes.instanceOf(Array).isRequired,
 };
 
