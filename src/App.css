@@ -21,6 +21,14 @@ body {
   margin: 0 auto;
 }
 
+/*
+.input-radio::after {
+  content: '';
+  color: #000;
+  width: 5px;
+}
+*/
+
 .inner {
   width: 100%;
   padding: 8rem 10px 4rem;
@@ -36,6 +44,15 @@ body {
 }
 
 .input-text {
+  font-size: 1rem;
+  font-weight: 400;
+  width: 85%;
+  padding-right: 5px;
+  padding-left: 10px;
+  border-radius: calc(0.5 * 100px);
+}
+
+.input-radio {
   font-size: 1rem;
   font-weight: 400;
   width: 85%;
