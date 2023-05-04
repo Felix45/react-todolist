@@ -11,6 +11,7 @@ class TodoItem extends React.Component {
   }
 
   editItem = () => {
+    console.log('Editing todo...');
     this.setState({ editing: true });
   }
 

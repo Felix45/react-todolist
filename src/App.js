@@ -6,6 +6,7 @@ import NoMatch from './pages/NoMatch';
 import Navbar from './components/Navbar';
 
 function App() {
+  console.log("Inside App component");
   return (
     <>
       <BrowserRouter>
