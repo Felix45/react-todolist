@@ -6,6 +6,13 @@ const Header = () => {
     lineHeight: '1.5em',
   };
 
+  /*
+  const headerStyle2 = {
+    padding: '0',
+    lineHeight: '1.5em',
+  };
+  */
+
   return (
     <header style={headerStyle}>
       <h1
